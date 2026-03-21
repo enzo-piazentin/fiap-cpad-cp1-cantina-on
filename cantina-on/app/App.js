@@ -3,7 +3,7 @@ import { useRouter } from 'expo-router';
 export default function Home() {
   const router = useRouter();
   return (
-    <View style={styles.container}>
+    <View style={styles.container}> 
       <Text style={styles.titulo}>🏠 Home</Text>
       <TouchableOpacity style={styles.botao} onPress={() => router.push('/sobre')}>
         <Text style={styles.botaoTexto}>Ir para Sobre</Text>
