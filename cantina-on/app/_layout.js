@@ -13,14 +13,6 @@ export default function Layout(){
       />
       
       <Tabs.Screen
-        name="carrinho"
-        options={{
-          title: 'Carrinho',
-          tabBarIcon: ({ color }) => <Ionicons name="cart" size={24} color={color} />,
-        }}
-      />
-      
-      <Tabs.Screen
         name="produtos"
         options={{
           title: 'Produtos',
@@ -28,28 +20,11 @@ export default function Layout(){
         }}
       />
 
-
       <Tabs.Screen
-        name="addSaldo"
+        name="carrinho"
         options={{
-          title: 'Saldo',
-          tabBarIcon: ({ color }) => <Ionicons name="fast-food" size={24} color={color} />,
-        }}
-      />
-
-      <Tabs.Screen
-        name="pagamento"
-        options={{
-          title: 'pagamento',
+          title: 'Carrinho',
           tabBarIcon: ({ color }) => <Ionicons name="cart" size={24} color={color} />,
-        }}
-      /> 
-
-      <Tabs.Screen
-        name="perfil"
-        options={{
-          title: 'Perfil',
-          tabBarIcon: ({ color }) => <Ionicons name="person" size={24} color={color} />,
         }}
       />
     </Tabs>

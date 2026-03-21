@@ -4,7 +4,7 @@ import { useRouter } from 'expo-router';
 export default function Home() {
   const router = useRouter();
   const imagem = {
-    source: require('../img/Mascote-On.png')
+    source: require('../img/MascoteOn.png')
   };
 
   return (
@@ -19,11 +19,10 @@ export default function Home() {
       </TouchableOpacity>
 
       
-      <TouchableOpacity style={styles.botao} onPress={() => router.push('/produtos')}>
-        <Text style={styles.botaoTexto}>Ir para Produtos</Text>
+      <TouchableOpacity style={styles.botao} onPress={() => router.push('/perfil')}>
+        <Text style={styles.botaoTexto}>👤 Acessar Perfil</Text>
       </TouchableOpacity>
-
-
+      
     </View>
   );
 }
@@ -55,8 +54,8 @@ const styles = StyleSheet.create({
   },
 
   avatar: {
-    width: 150,
-    height: 150,
+    width: 200,
+    height: 200,
     marginBottom: 20,
   }
 },
