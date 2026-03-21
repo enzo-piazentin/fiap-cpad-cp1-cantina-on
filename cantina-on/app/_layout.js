@@ -1,7 +1,7 @@
 import { Tabs } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
-export default function Layout() {
+export default function Layout(){
   return (
     <Tabs screenOptions={{ tabBarActiveTintColor: '#E83D84', headerShown: false }}>
       <Tabs.Screen
@@ -11,7 +11,15 @@ export default function Layout() {
           tabBarIcon: ({ color }) => <Ionicons name="home" size={24} color={color} />,
         }}
       />
-
+      
+      <Tabs.Screen
+        name="carrinho"
+        options={{
+          title: 'Carrinho',
+          tabBarIcon: ({ color }) => <Ionicons name="cart" size={24} color={color} />,
+        }}
+      />
+      
       <Tabs.Screen
         name="produtos"
         options={{
@@ -20,13 +28,22 @@ export default function Layout() {
         }}
       />
 
+
       <Tabs.Screen
-        name="carrinho"
+        name="addSaldo"
         options={{
-          title: 'Carrinho',
-          tabBarIcon: ({ color }) => <Ionicons name="cart" size={24} color={color} />,
+          title: 'Saldo',
+          tabBarIcon: ({ color }) => <Ionicons name="fast-food" size={24} color={color} />,
         }}
       />
+
+      <Tabs.Screen
+        name="pagamento"
+        options={{
+          title: 'pagamento',
+          tabBarIcon: ({ color }) => <Ionicons name="cart" size={24} color={color} />,
+        }}
+      /> 
 
       <Tabs.Screen
         name="perfil"
