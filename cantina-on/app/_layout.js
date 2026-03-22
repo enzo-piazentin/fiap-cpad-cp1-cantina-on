@@ -27,6 +27,30 @@ export default function Layout(){
           tabBarIcon: ({ color }) => <Ionicons name="person" size={24} color={color} />,
         }}
       />
+
+      <Tabs.Screen
+        name="ajuda"
+        options={{
+          href: null, // Desabilita a navegação para esta aba
+          headerShown: false, // Esconde o header para esta aba
+        }}
+      />
+
+      <Tabs.Screen
+        name="carrinho"
+        options={{
+          href: null,
+          headerShown: false, 
+        }}
+      />
+
+      <Tabs.Screen
+        name="addSaldo"
+        options={{
+          href: null,
+          headerShown: false,
+        }}
+      />
     </Tabs>
   );
 }
