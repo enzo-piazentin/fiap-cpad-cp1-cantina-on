@@ -19,12 +19,12 @@ export default function Layout(){
           tabBarIcon: ({ color }) => <Ionicons name="fast-food" size={24} color={color} />,
         }}
       />
-
+      
       <Tabs.Screen
-        name="carrinho"
+        name="perfil"
         options={{
-          title: 'Carrinho',
-          tabBarIcon: ({ color }) => <Ionicons name="cart" size={24} color={color} />,
+          title: 'Perfil',
+          tabBarIcon: ({ color }) => <Ionicons name="person" size={24} color={color} />,
         }}
       />
     </Tabs>
