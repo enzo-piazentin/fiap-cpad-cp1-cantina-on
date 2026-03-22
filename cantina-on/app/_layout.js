@@ -35,6 +35,21 @@ export default function Layout() {
           tabBarIcon: ({ color }) => <Ionicons name="person" size={24} color={color} />,
         }}
       />
+
+      <Tabs.Screen
+        name="addSaldo"
+        options={{
+          href  : null,
+          headerShown: false,
+        }}
+      />
+      <Tabs.Screen
+        name="ajuda"
+        options={{
+          href  : null,
+          headerShown: false,
+        }}
+      />
     </Tabs>
   );
 }
