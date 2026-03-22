@@ -51,6 +51,14 @@ export default function Layout(){
           headerShown: false,
         }}
       />
+
+       <Tabs.Screen
+        name="pagamento"
+        options={{
+          href: null,
+          headerShown: false,
+        }}
+      />
     </Tabs>
   );
 }
