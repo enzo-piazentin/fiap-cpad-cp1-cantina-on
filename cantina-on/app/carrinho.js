@@ -10,7 +10,7 @@ export default function Carrinho() {
     {
       id: 1,
       nome: 'Coxinha de Frango',
-      preco: 5.50,
+      preco: 8.50,
       source: require('../img/Coxinha.png'),
       quantidade: 1
     },
@@ -33,15 +33,8 @@ export default function Carrinho() {
   // Função para diminuir quantidade
   const diminuirQuantidade = (id) => {
     setProdutosCarrinho(produtosCarrinho.map(produto =>
-      produto.id === id && produto.quantidade > 1
-        ? { ...produto, quantidade: produto.quantidade - 1 }
-        : produto
+      produto.id === id ? { ...produto, quantidade: produto.quantidade - 1 } : produto
     ));
-  };
-
-  // Função para remover produto
-  const removerProduto = (id) => {
-    setProdutosCarrinho(produtosCarrinho.filter(produto => produto.id !== id));
   };
 
   // Calcular total
@@ -55,47 +48,43 @@ export default function Carrinho() {
       <Text style={styles.titulo}>Meu Carrinho</Text>
 
       <ScrollView style={styles.scrollContainer}>
-        {produtosCarrinho.length === 0 ? (
-          <Text style={styles.carrinhoVazio}>Seu carrinho está vazio</Text>
-        ) : (
-          produtosCarrinho.map((produto) => (
-            <View key={produto.id} style={styles.produtoContainer}>
-              {/* Imagem do produto como botão */}
-              
-              <TouchableOpacity style={styles.imagemContainer}>
-                <Image
-                  source={produto.source}
-                  style={styles.produtoImagem}
-                  defaultSource={require('../img/MascoteOn.png')}
-                />
-              </TouchableOpacity>
+        {produtosCarrinho.map(produto => (
+          <View key={produto.id} style={styles.produtoContainer}>
+            {/* Imagem do produto como botão */}
+            
+            <TouchableOpacity style={styles.imagemContainer}>
+              <Image
+                source={produto.source}
+                style={styles.produtoImagem}
+                defaultSource={require('../img/MascoteOn.png')}
+              />
+            </TouchableOpacity>
 
-              <View style={styles.produtoInfo}>
-                <Text style={styles.produtoNome}>{produto.nome}</Text>
-                <Text style={styles.produtoPreco}>R$ {produto.preco.toFixed(2)}</Text>
+            <View style={styles.produtoInfo}>
+              <Text style={styles.produtoNome}>{produto.nome}</Text>
+              <Text style={styles.produtoPreco}>R$ {produto.preco.toFixed(2)}</Text>
 
-                {/* Controles de quantidade */}
-                <View style={styles.quantidadeContainer}>
-                  <TouchableOpacity
-                    style={styles.botaoQuantidade}
-                    onPress={() => diminuirQuantidade(produto.id)}
-                  >
-                    <Text style={styles.botaoQuantidadeTexto}>-</Text>
-                  </TouchableOpacity>
+              {/* Controles de quantidade */}
+              <View style={styles.quantidadeContainer}>
+                <TouchableOpacity
+                  style={styles.botaoQuantidade}
+                  onPress={() => diminuirQuantidade(produto.id)}
+                >
+                  <Text style={styles.botaoQuantidadeTexto}>-</Text>
+                </TouchableOpacity>
 
-                  <Text style={styles.quantidadeTexto}>{produto.quantidade}</Text>
+                <Text style={styles.quantidadeTexto}>{produto.quantidade}</Text>
 
-                  <TouchableOpacity
-                    style={styles.botaoQuantidade}
-                    onPress={() => aumentarQuantidade(produto.id)}
-                  >
-                    <Text style={styles.botaoQuantidadeTexto}>+</Text>
-                  </TouchableOpacity>
-                </View>
+                <TouchableOpacity
+                  style={styles.botaoQuantidade}
+                  onPress={() => aumentarQuantidade(produto.id)}
+                >
+                  <Text style={styles.botaoQuantidadeTexto}>+</Text>
+                </TouchableOpacity>
               </View>
             </View>
-          ))
-        )}
+          </View>
+        ))}
       </ScrollView>
 
       {/* Total e botão de pagar */}

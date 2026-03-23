@@ -85,7 +85,7 @@ export default function Produtos() {
         </TouchableOpacity>
       </View>
       <View style={styles.linha}>
-        <TouchableOpacity style={{flex: 1}} onPress={() => {}}>
+        <TouchableOpacity style={{flex: 2}} onPress={() => {}}>
           <View style={styles.caixaProduto}>
             <Image source={require('../assets/imagemSucoDeLaranja.png')} style={styles.imagemProduto} />
             <Text style={styles.nomeProduto}>Suco de Laranja</Text>
@@ -94,12 +94,22 @@ export default function Produtos() {
           </View>
         </TouchableOpacity>
 
-        <TouchableOpacity style={{flex: 1}} onPress={() => {}}>
+        <TouchableOpacity style={{flex: 2}} onPress={() => {}}>
           <View style={styles.caixaProduto}>
             <Image source={require('../assets/imagemEnergetico.png')} style={styles.imagemProduto} />
             <Text style={styles.nomeProduto}>Energético</Text>
             <Text style={styles.descricaoProduto}>Energético de 300ml</Text>
             <Text style={styles.precoProduto}>R$ 13</Text>
+          </View>
+        </TouchableOpacity>
+      </View>
+      <View>
+        <TouchableOpacity style={{flex: 1}} onPress={() => {}}>
+          <View style={styles.caixaProduto}>
+            <Image source={require('../img/coca.png')} style={styles.imagemProduto} />
+            <Text style={styles.nomeProduto}>Coca-Cola</Text>
+            <Text style={styles.descricaoProduto}>Coca-Cola 350ml</Text>
+            <Text style={styles.precoProduto}>R$ 3</Text>
           </View>
         </TouchableOpacity>
       </View>
@@ -109,7 +119,7 @@ export default function Produtos() {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 10,
+    padding: 20,
     backgroundColor: '#fff',
   },
   linha: {
