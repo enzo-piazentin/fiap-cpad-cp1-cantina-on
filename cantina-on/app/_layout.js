@@ -17,7 +17,7 @@ export default function Layout(){
         options={{
           title: 'Produtos',
           tabBarIcon: ({ color }) => <Ionicons name="fast-food" size={24} color={color} />,
-        }}
+      
       />
       
       <Tabs.Screen
