@@ -8,7 +8,7 @@ export default function Produtos() {
     <ScrollView contentContainerStyle={styles.container}>
       <Text style={styles.titulo}>Para comer 😋</Text>
       <View style={styles.linha}>
-        <TouchableOpacity style={{flex: 1}} onPress={() => {}}>
+        <TouchableOpacity style={{flex: 1}}>
           <View style={styles.caixaProduto}>
             <Image source={require('../assets/imagemSanduicheNatural.png')} style={styles.imagemProduto} />
             <Text style={styles.nomeProduto}>Sanduíche Natural</Text>
@@ -17,7 +17,7 @@ export default function Produtos() {
           </View>
         </TouchableOpacity>
 
-        <TouchableOpacity style={{flex: 1}} onPress={() => {}}>
+        <TouchableOpacity style={{flex: 1}}>
           <View style={styles.caixaProduto}>
             <Image source={require('../assets/imagemMiniPaesDeQueijo.png')} style={styles.imagemProduto} />
             <Text style={styles.nomeProduto}>Mini Pães de Queijo</Text>
@@ -27,7 +27,7 @@ export default function Produtos() {
         </TouchableOpacity>
       </View>
       <View style={styles.linha}>
-        <TouchableOpacity style={{flex: 1}} onPress={() => {}}>
+        <TouchableOpacity style={{flex: 1}}>
           <View style={styles.caixaProduto}>
             <Image source={require('../assets/imagemSalgado.png')} style={styles.imagemProduto} />
             <Text style={styles.nomeProduto}>Mini Salgado Assado</Text>
@@ -36,7 +36,7 @@ export default function Produtos() {
           </View>
         </TouchableOpacity>
 
-        <TouchableOpacity style={{flex: 1}} onPress={() => {}}>
+        <TouchableOpacity style={{flex: 1}}>
           <View style={styles.caixaProduto}>
             <Image source={require('../assets/imagemCoxinha.png')} style={styles.imagemProduto} />
             <Text style={styles.nomeProduto}>Coxinha</Text>
@@ -46,16 +46,16 @@ export default function Produtos() {
         </TouchableOpacity>
       </View>
       <View style={styles.linha}>
-        <TouchableOpacity style={{flex: 1}} onPress={() => {}}>
+        <TouchableOpacity style={{flex: 1}}>
           <View style={styles.caixaProduto}>
             <Image source={require('../assets/imagemBoloDePote.png')} style={styles.imagemProduto} />
-            <Text style={styles.nomeProduto}>Bolo de Pote de Chocolate com Cookies</Text>
-            <Text style={styles.descricaoProduto}>Novidade! Delicioso bolo de pote de chocolate com recheio sabor cookies n' cream!</Text>
+            <Text style={styles.nomeProduto}>Bolo de Pote Cookies</Text>
+            <Text style={styles.descricaoProduto}>Delicioso bolo de pote sabor cookies n' cream!</Text>
             <Text style={styles.precoProduto}>R$ 12</Text>
           </View>
         </TouchableOpacity>
 
-        <TouchableOpacity style={{flex: 1}} onPress={() => {}}>
+        <TouchableOpacity style={{flex: 1}}>
           <View style={styles.caixaProduto}>
             <Image source={require('../assets/imagemBarraDeChocolate.png')} style={styles.imagemProduto} />
             <Text style={styles.nomeProduto}>Barra de Chocolate</Text>
@@ -64,18 +64,19 @@ export default function Produtos() {
           </View>
         </TouchableOpacity>
       </View>
+      
       <Text style={styles.titulo}>Para beber 🥤</Text>
       <View style={styles.linha}>
-        <TouchableOpacity style={{flex: 1}} onPress={() => {}}>
+        <TouchableOpacity style={{flex: 1}}>
           <View style={styles.caixaProduto}>
             <Image source={require('../assets/imagemAguaMineral.png')} style={styles.imagemProduto} />
             <Text style={styles.nomeProduto}>Água Mineral</Text>
-            <Text style={styles.descricaoProduto}>Água mineral sem gás de 500ml</Text>
+            <Text style={styles.descricaoProduto}>Água sem gás 500ml</Text>
             <Text style={styles.precoProduto}>R$ 4</Text>
           </View>
         </TouchableOpacity>
 
-        <TouchableOpacity style={{flex: 1}} onPress={() => {}}>
+        <TouchableOpacity style={{flex: 1}}>
           <View style={styles.caixaProduto}>
             <Image source={require('../assets/imagemCafe.png')} style={styles.imagemProduto} />
             <Text style={styles.nomeProduto}>Café Expresso</Text>
@@ -85,7 +86,7 @@ export default function Produtos() {
         </TouchableOpacity>
       </View>
       <View style={styles.linha}>
-        <TouchableOpacity style={{flex: 2}} onPress={() => {}}>
+        <TouchableOpacity style={{flex: 2}}>
           <View style={styles.caixaProduto}>
             <Image source={require('../assets/imagemSucoDeLaranja.png')} style={styles.imagemProduto} />
             <Text style={styles.nomeProduto}>Suco de Laranja</Text>
@@ -94,7 +95,7 @@ export default function Produtos() {
           </View>
         </TouchableOpacity>
 
-        <TouchableOpacity style={{flex: 2}} onPress={() => {}}>
+        <TouchableOpacity style={{flex: 2}}>
           <View style={styles.caixaProduto}>
             <Image source={require('../assets/imagemEnergetico.png')} style={styles.imagemProduto} />
             <Text style={styles.nomeProduto}>Energético</Text>
@@ -103,8 +104,8 @@ export default function Produtos() {
           </View>
         </TouchableOpacity>
       </View>
-      <View>
-        <TouchableOpacity style={{flex: 1}} onPress={() => {}}>
+      <View style={styles.linha}>
+        <TouchableOpacity style={{flex: 1}}>
           <View style={styles.caixaProduto}>
             <Image source={require('../img/coca.png')} style={styles.imagemProduto} />
             <Text style={styles.nomeProduto}>Coca-Cola</Text>
@@ -120,17 +121,17 @@ export default function Produtos() {
 const styles = StyleSheet.create({
   container: {
     padding: 20,
-    backgroundColor: '#fff',
+    backgroundColor: '#000000',
   },
   linha: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginBottom: 2,
+    marginBottom: 5,
   },
   caixaProduto: {
-    backgroundColor: '#fff',
-    borderWidth: 3,
-    borderColor: '#E83D84',
+    backgroundColor: '#0D0D0D',
+    borderWidth: 2,
+    borderColor: '#4B163B', // Vinho Escuro
     margin: 5,
     borderRadius: 15,
     padding: 10,
@@ -143,24 +144,27 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
   },
   titulo:{
-    fontSize: 32,
+    fontSize: 28,
     fontWeight: 'bold',
-    marginBottom: 12,
+    marginBottom: 15,
+    marginTop: 10,
+    color: '#FF007F', // Destaque para separar as sessões
   },
   nomeProduto: {
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: 'bold',
+    color: '#FFFFFF',
     marginTop: 5,
   },
   descricaoProduto: {
-    fontSize: 14,
-    color: '#666',
+    fontSize: 12,
+    color: '#BDBDBD', // Cinza Claro
+    marginTop: 3,
   },
   precoProduto: {
     fontSize: 16,
     fontWeight: 'bold',
     marginTop: 5,
-    textDecorationLine: 'underline',
-    color: '#E83D84',
+    color: '#BD1E7C', // Magenta Médio
   },
 });

@@ -15,7 +15,6 @@ export default function Home() {
       />
 
       <View style={styles.menuContainer}>
-        {/* Botão que navega para a tela carrinho.js */}
         <TouchableOpacity style={styles.menuItem} onPress={() => router.push('/carrinho')}>
           <Text style={styles.menuItemText}>🛒 Meu Carrinho</Text>
         </TouchableOpacity>
@@ -32,7 +31,6 @@ export default function Home() {
           <Text style={styles.menuItemTextSair}>⚙️ Configurações da Conta</Text>
         </TouchableOpacity>
       </View>
-      
     </View>
   );
 }
@@ -41,51 +39,40 @@ const styles = StyleSheet.create({
   container: { 
     flex: 1, 
     alignItems: 'center',
-   justifyContent: 'center', 
-   backgroundColor: '#F5F5F5' 
+    justifyContent: 'center', 
+    backgroundColor: '#000000' // Preto Puro
   },
-  
-  titulo: { 
-    fontSize: 32, 
-    fontWeight: 'bold', 
-    marginBottom: 24 
-  },
-
-  botaoTexto: { 
-    color: '#fff', 
-    fontSize: 16, 
-    fontWeight: '600' 
-  },
-
   avatar: {
     width: 200,
     height: 200,
     marginBottom: 20,
   },
   menuContainer: {
-    backgroundColor: '#FFF',
+    backgroundColor: '#0D0D0D', // Grafite Muito Escuro
     marginHorizontal: 20,
     borderRadius: 15,
-    paddingVertical: 20,
+    paddingVertical: 10,
     paddingHorizontal: 15,
     marginBottom: 30,
+    borderWidth: 1,
+    borderColor: '#4B163B', // Vinho Escuro
+    width: '90%',
   },
   menuItem: {
-    padding: 15,
+    padding: 18,
     borderBottomWidth: 1,
-    borderBottomColor: '#F0F0F0',
+    borderBottomColor: '#424242', // Cinza Escuro
   },
-    menuItemSair: {
+  menuItemSair: {
     borderBottomWidth: 0,
   },
   menuItemText: {
     fontSize: 18,
-    color: '#333',
+    color: '#FFFFFF', // Branco
   },
   menuItemTextSair: {
     fontSize: 18,
-    color: '#FF3B30', // Vermelho para destacar a opção de sair
+    color: '#FF007F', // Magenta Vibrante para destaque
     fontWeight: 'bold',
   },
-},
-);
+});

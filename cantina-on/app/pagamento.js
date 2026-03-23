@@ -6,12 +6,9 @@ export default function Pagamento() {
 
   return (
     <View style={styles.mainContainer}>
-
       <Text style={styles.titulo}>Pagamento</Text>
 
-      {/* Container centralizado */}
       <View style={styles.opcoesContainer}>
-
         <TouchableOpacity style={styles.opcao}>
           <Text style={styles.opcaoTexto}>📱 Pix</Text>
         </TouchableOpacity>
@@ -27,13 +24,10 @@ export default function Pagamento() {
         <TouchableOpacity style={styles.opcao}>
           <Text style={styles.opcaoTexto}>🍽️ Refeição</Text>
         </TouchableOpacity>
-
       </View>
 
-      {/* Rodapé */}
       <View style={styles.totalContainer}>
         <Text style={styles.totalTexto}>Total: R$ 8.50</Text>
-
         <TouchableOpacity
           style={styles.botaoConfirmar}
           onPress={() => alert('Pedido confirmado!')}
@@ -41,7 +35,6 @@ export default function Pagamento() {
           <Text style={styles.botaoTexto}>Pagar</Text>
         </TouchableOpacity>
       </View>
-
     </View>
   );
 } 
@@ -49,69 +42,56 @@ export default function Pagamento() {
 const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
-    backgroundColor: '#F5F5F5',
+    backgroundColor: '#000000',
     paddingTop: 50,
   },
-
   titulo: {
     fontSize: 24,
     fontWeight: 'bold',
     textAlign: 'center',
     marginBottom: 20,
-    color: '#333',
+    color: '#FF007F', // Magenta Vibrante
   },
-
   opcoesContainer: {
     flex: 1,
     justifyContent: 'center',
     paddingHorizontal: 20,
   },
-
- 
   opcao: {
-    backgroundColor: '#FFF',
+    backgroundColor: '#0D0D0D',
     borderRadius: 15,
     padding: 20,
     marginBottom: 15,
     justifyContent: 'center',
-
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 3,
+    borderWidth: 1,
+    borderColor: '#424242',
   },
-
   opcaoTexto: {
     fontSize: 16,
     fontWeight: 'bold',
-    color: '#333',
+    color: '#FFFFFF',
   },
-
   totalContainer: {
-    backgroundColor: '#FFF',
+    backgroundColor: '#0D0D0D',
     padding: 20,
     borderTopWidth: 1,
-    borderTopColor: '#E0E0E0',
+    borderTopColor: '#BD1E7C', // Magenta Médio
   },
-
   totalTexto: {
     fontSize: 20,
     fontWeight: 'bold',
     textAlign: 'center',
     marginBottom: 15,
-    color: '#333',
+    color: '#FFFFFF',
   },
-
   botaoConfirmar: {
-    backgroundColor: '#E83D84',
+    backgroundColor: '#FF007F', // Destaque FIAP
     padding: 15,
     borderRadius: 10,
     alignItems: 'center',
   },
-
   botaoTexto: {
-    color: '#FFF',
+    color: '#FFFFFF',
     fontSize: 18,
     fontWeight: 'bold',
   },

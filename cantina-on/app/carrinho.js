@@ -5,7 +5,6 @@ import { useState } from 'react';
 export default function Carrinho() {
   const router = useRouter();
 
-  // Estado para os produtos no carrinho
   const [produtosCarrinho, setProdutosCarrinho] = useState([
     {
       id: 1,
@@ -23,35 +22,29 @@ export default function Carrinho() {
     }
   ]);
 
-  // Função para aumentar quantidade
   const aumentarQuantidade = (id) => {
     setProdutosCarrinho(produtosCarrinho.map(produto =>
       produto.id === id ? { ...produto, quantidade: produto.quantidade + 1 } : produto
     ));
   };
 
-  // Função para diminuir quantidade
   const diminuirQuantidade = (id) => {
     setProdutosCarrinho(produtosCarrinho.map(produto =>
-      produto.id === id ? { ...produto, quantidade: produto.quantidade - 1 } : produto
+      produto.id === id ? { ...produto, quantidade: Math.max(1, produto.quantidade - 1)} : produto
     ));
   };
 
-  // Calcular total
   const calcularTotal = () => {
     return produtosCarrinho.reduce((total, produto) => total + (produto.preco * produto.quantidade), 0);
   };
 
   return (
     <View style={styles.mainContainer}>
-
       <Text style={styles.titulo}>Meu Carrinho</Text>
 
       <ScrollView style={styles.scrollContainer}>
         {produtosCarrinho.map(produto => (
           <View key={produto.id} style={styles.produtoContainer}>
-            {/* Imagem do produto como botão */}
-            
             <TouchableOpacity style={styles.imagemContainer}>
               <Image
                 source={produto.source}
@@ -64,7 +57,6 @@ export default function Carrinho() {
               <Text style={styles.produtoNome}>{produto.nome}</Text>
               <Text style={styles.produtoPreco}>R$ {produto.preco.toFixed(2)}</Text>
 
-              {/* Controles de quantidade */}
               <View style={styles.quantidadeContainer}>
                 <TouchableOpacity
                   style={styles.botaoQuantidade}
@@ -87,7 +79,6 @@ export default function Carrinho() {
         ))}
       </ScrollView>
 
-      {/* Total e botão de pagar */}
       {produtosCarrinho.length > 0 && (
         <View style={styles.totalContainer}>
           <Text style={styles.totalTexto}>Total: R$ {calcularTotal().toFixed(2)}</Text>
@@ -106,132 +97,99 @@ export default function Carrinho() {
 const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
-    backgroundColor: '#F5F5F5',
+    backgroundColor: '#000000',
     paddingTop: 50,
   },
-
   titulo: {
     fontSize: 24,
     fontWeight: 'bold',
     textAlign: 'center',
     marginBottom: 20,
-    color: '#333',
+    color: '#FF007F',
   },
-
   scrollContainer: {
     flex: 1,
     paddingHorizontal: 20,
   },
-
-  carrinhoVazio: {
-    textAlign: 'center',
-    fontSize: 18,
-    color: '#666',
-    marginTop: 50,
-  },
-
   produtoContainer: {
-    backgroundColor: '#FFF',
+    backgroundColor: '#0D0D0D',
     borderRadius: 15,
     padding: 15,
     marginBottom: 15,
     flexDirection: 'row',
     alignItems: 'center',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 3,
+    borderWidth: 1,
+    borderColor: '#4B163B',
   },
-
   imagemContainer: {
     marginRight: 15,
   },
-
   produtoImagem: {
     width: 80,
     height: 80,
     borderRadius: 10,
   },
-
   produtoInfo: {
     flex: 1,
   },
-
   produtoNome: {
     fontSize: 16,
     fontWeight: 'bold',
-    color: '#333',
+    color: '#FFFFFF',
     marginBottom: 5,
   },
-
   produtoPreco: {
     fontSize: 14,
-    color: '#E83D84',
+    color: '#BD1E7C',
     fontWeight: '600',
     marginBottom: 10,
   },
-
   quantidadeContainer: {
     flexDirection: 'row',
     alignItems: 'center',
   },
-
   botaoQuantidade: {
-    backgroundColor: '#E83D84',
+    backgroundColor: '#BD1E7C',
     width: 30,
     height: 30,
     borderRadius: 15,
     justifyContent: 'center',
     alignItems: 'center',
   },
-
   botaoQuantidadeTexto: {
-    color: '#FFF',
+    color: '#FFFFFF',
     fontSize: 18,
     fontWeight: 'bold',
   },
-
   quantidadeTexto: {
     fontSize: 16,
     fontWeight: 'bold',
+    color: '#FFFFFF',
     marginHorizontal: 15,
     minWidth: 30,
     textAlign: 'center',
   },
-
-  botaoExcluir: {
-    padding: 10,
-  },
-
-  botaoExcluirTexto: {
-    fontSize: 20,
-  },
-
   totalContainer: {
-    backgroundColor: '#FFF',
+    backgroundColor: '#0D0D0D',
     padding: 20,
     borderTopWidth: 1,
-    borderTopColor: '#E0E0E0',
+    borderTopColor: '#BD1E7C',
   },
-
   totalTexto: {
     fontSize: 20,
     fontWeight: 'bold',
     textAlign: 'center',
     marginBottom: 15,
-    color: '#333',
+    color: '#FFFFFF',
   },
-
   botaoPagar: {
-    backgroundColor: '#E83D84',
+    backgroundColor: '#FF007F',
     padding: 15,
     borderRadius: 10,
     alignItems: 'center',
   },
-
   botaoPagarTexto: {
-    color: '#FFF',
+    color: '#FFFFFF',
     fontSize: 18,
     fontWeight: 'bold',
   },

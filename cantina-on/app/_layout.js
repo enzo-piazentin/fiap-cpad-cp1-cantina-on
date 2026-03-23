@@ -3,7 +3,7 @@ import { Ionicons } from '@expo/vector-icons';
 
 export default function Layout(){
   return (
-    <Tabs screenOptions={{ tabBarActiveTintColor: '#E83D84', headerShown: false }}>
+    <Tabs screenOptions={{ tabBarActiveTintColor: '#E83D84', headerShown: false, tabBarStyle:{backgroundColor:'#000'} }}>
       <Tabs.Screen
         name="index"
         options={{
