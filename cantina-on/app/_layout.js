@@ -29,6 +29,13 @@ export default function Layout(){
       />
 
       <Tabs.Screen
+        name="Desenvolvimento"
+        options={{
+          href: null, 
+          headerShown: false
+        }}
+      />
+            <Tabs.Screen
         name="ajuda"
         options={{
           href: null, // Desabilita a navegação para esta aba
@@ -51,8 +58,7 @@ export default function Layout(){
           headerShown: false,
         }}
       />
-
-       <Tabs.Screen
+      <Tabs.Screen
         name="pagamento"
         options={{
           href: null,

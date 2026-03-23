@@ -27,10 +27,6 @@ export default function Home() {
         <TouchableOpacity style={styles.menuItem} onPress={() => router.push('/ajuda')}>
           <Text style={styles.menuItemText}>❓ Ajuda e Suporte</Text>
         </TouchableOpacity>
-
-        <TouchableOpacity style={[styles.menuItem, styles.menuItemSair]}>
-          <Text style={styles.menuItemTextSair}>⚙️ Configurações da Conta</Text>
-        </TouchableOpacity>
       </View>
       
     </View>
@@ -41,8 +37,8 @@ const styles = StyleSheet.create({
   container: { 
     flex: 1, 
     alignItems: 'center',
-   justifyContent: 'center', 
-   backgroundColor: '#F5F5F5' 
+    justifyContent: 'center', 
+    backgroundColor: '#F5F5F5' 
   },
   
   titulo: { 
@@ -64,16 +60,22 @@ const styles = StyleSheet.create({
   },
   menuContainer: {
     backgroundColor: '#FFF',
-    marginHorizontal: 20,
     borderRadius: 15,
     paddingVertical: 20,
     paddingHorizontal: 15,
     marginBottom: 30,
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: 280,
+    alignSelf: 'center',
   },
   menuItem: {
     padding: 15,
     borderBottomWidth: 1,
     borderBottomColor: '#F0F0F0',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '100%',
   },
     menuItemSair: {
     borderBottomWidth: 0,
@@ -81,6 +83,7 @@ const styles = StyleSheet.create({
   menuItemText: {
     fontSize: 18,
     color: '#333',
+    textAlign: 'center',
   },
   menuItemTextSair: {
     fontSize: 18,

@@ -40,11 +40,11 @@ export default function AjudaSuporte() {
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>Ainda precisa de ajuda?</Text>
         
-        <TouchableOpacity style={styles.contactBtnWhatsApp}>
+        <TouchableOpacity style={styles.contactBtnWhatsApp}onPress={() => router.push('/Desenvolvimento')}>
           <Text style={styles.contactBtnText}>💬 Falar no WhatsApp</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.contactBtnEmail}>
+        <TouchableOpacity style={styles.contactBtnEmail }onPress={() => router.push('/Desenvolvimento')}>
           <Text style={styles.contactBtnTextEmail}>✉️ Enviar E-mail para a Cantina</Text>
         </TouchableOpacity>
       </View>

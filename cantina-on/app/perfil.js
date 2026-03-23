@@ -1,9 +1,11 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView } from 'react-native';
 import { useRouter } from 'expo-router';
+import { useSaldo } from './SaldoContext';
 
 export default function Perfil() {
   const router = useRouter();
+  const { saldo } = useSaldo();
 
   return (
     <ScrollView style={styles.container}>
@@ -16,14 +18,12 @@ export default function Perfil() {
         <Text style={styles.name}>Guilherme RM: 565157</Text>
         <Text style={styles.curso}>Curso: Ciência da Computação</Text>
         <Text style={styles.email}>guilherme.califoni@fiap.com.br</Text>
-        
       </View>
 
       {/* Card de Saldo */}
       <View style={styles.cardSaldo}>
         <Text style={styles.saldoTitle}>Saldo Disponível</Text>
-        <Text style={styles.saldoValue}>R$ 45,50</Text>
-        
+        <Text style={styles.saldoValue}>{saldo !== undefined ? `R$ ${saldo.toFixed(2).replace('.', ',')}` : 'R$ 0,00'}</Text>
         {/* Botão que navega para a tela addSaldo.js */}
         <TouchableOpacity 
           style={styles.btnSaldo} 
@@ -35,22 +35,12 @@ export default function Perfil() {
 
       {/* Menu de Opções */}
       <View style={styles.menuContainer}>
-        
         {/* Botão que navega para a tela carrinho.js */}
         <TouchableOpacity style={styles.menuItem} onPress={() => router.push('/carrinho')}>
           <Text style={styles.menuItemText}>🍔 Meus Pedidos</Text>
         </TouchableOpacity>
-
-        <TouchableOpacity style={styles.menuItem}>
-          <Text style={styles.menuItemText}>⚙️ Configurações da Conta</Text>
-        </TouchableOpacity>
-
         <TouchableOpacity style={styles.menuItem} onPress={() => router.push('/ajuda')}>
           <Text style={styles.menuItemText}>❓ Ajuda e Suporte</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={[styles.menuItem, styles.menuItemSair]}>
-          <Text style={styles.menuItemTextSair}>🚪 Sair</Text>
         </TouchableOpacity>
       </View>
     </ScrollView>

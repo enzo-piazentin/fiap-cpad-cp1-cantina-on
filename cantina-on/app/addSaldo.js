@@ -1,9 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, StyleSheet, TextInput, TouchableOpacity, KeyboardAvoidingView, Platform } from 'react-native';
 import { useRouter } from 'expo-router';
+import { useSaldo } from './SaldoContext';
 
 export default function AddSaldo() {
   const router = useRouter();
+  const { adicionarSaldo } = useSaldo();
+  const [valor, setValor] = useState('');
+
+  // Função para converter string para float considerando vírgula
+  const parseValor = (str) => {
+    const clean = str.replace(/\./g, '').replace(',', '.');
+    return parseFloat(clean) || 0;
+  };
+
+  // Função para adicionar valor rápido
+  const handleQuickValue = (add) => {
+    const atual = parseValor(valor);
+    const novo = atual + add;
+    setValor(novo.toFixed(2).replace('.', ','));
+  };
+
+  // Função para confirmar e adicionar saldo
+  const handleConfirmar = () => {
+    const valorFloat = parseValor(valor);
+    if (valorFloat > 0) {
+      adicionarSaldo(valorFloat);
+    }
+    router.push('/perfil');
+  };
 
   return (
     <KeyboardAvoidingView 
@@ -25,24 +50,27 @@ export default function AddSaldo() {
           style={styles.input}
           placeholder="0,00"
           maxLength={8}
+          keyboardType="numeric"
+          value={valor}
+          onChangeText={setValor}
         />
       </View>
 
-      {/* Botões de Valores Rápidos (Apenas visuais) */}
+      {/* Botões de Valores Rápidos */}
       <View style={styles.quickValuesContainer}>
-        <TouchableOpacity style={styles.quickValueBtn}>
+        <TouchableOpacity style={styles.quickValueBtn} onPress={() => handleQuickValue(10)}>
           <Text style={styles.quickValueText}>+ R$ 10</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.quickValueBtn}>
+        <TouchableOpacity style={styles.quickValueBtn} onPress={() => handleQuickValue(20)}>
           <Text style={styles.quickValueText}>+ R$ 20</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.quickValueBtn}>
+        <TouchableOpacity style={styles.quickValueBtn} onPress={() => handleQuickValue(50)}>
           <Text style={styles.quickValueText}>+ R$ 50</Text>
         </TouchableOpacity>
       </View>
 
-      {/* Botão Confirmar (Apenas volta para o Perfil) */}
-      <TouchableOpacity style={styles.btnConfirmar} onPress={() => router.back()}>
+      {/* Botão Confirmar */}
+      <TouchableOpacity style={styles.btnConfirmar} onPress={handleConfirmar}>
         <Text style={styles.btnConfirmarText}>Confirmar Pagamento</Text>
       </TouchableOpacity>
 
