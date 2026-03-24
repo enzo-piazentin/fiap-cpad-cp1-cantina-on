@@ -21,7 +21,9 @@ A cantina foi escolhida por ser um ponto de grande fluxo e necessidade de otimiz
 
 ## Integrantes do Grupo
 - Guilherme Califoni — RM: 565157
-- [Adicione aqui os nomes completos e RMs dos demais integrantes]
+- Antonio Lucas Santana Tavares - RM: 565516
+- Bento Donato Garcia - RM: 561621
+- Enzo Ribeiro Domingues Piazentin - RM: 564216
 
 ---
 
@@ -60,29 +62,36 @@ A cantina foi escolhida por ser um ponto de grande fluxo e necessidade de otimiz
 ### Prints das telas
 
 #### Tela Inicial
-![Tela Inicial](./prints/tela-inicial.png)
+<img width="308" height="649" alt="image" src="https://github.com/user-attachments/assets/2df33066-589d-4312-8f9f-674d64898d93" />
+
 
 #### Tela de Produtos
-![Tela Produtos](./prints/tela-produtos.png)
+<img width="314" height="643" alt="image" src="https://github.com/user-attachments/assets/fcc2a1b2-ccb1-4d45-a50f-b5acc8bb74fe" />
+
 
 #### Tela de Carrinho
-![Tela Carrinho](./prints/tela-carrinho.png)
+<img width="314" height="654" alt="image" src="https://github.com/user-attachments/assets/68505f65-8779-442c-b2c4-37b0a72a056d" />
+
 
 #### Tela de Adicionar Saldo
-![Tela Adicionar Saldo](./prints/tela-add-saldo.png)
+<img width="308" height="650" alt="image" src="https://github.com/user-attachments/assets/0ce77e53-351f-4cd3-9a6c-e48c88d93c45" />
+
 
 #### Tela de Pagamento
-![Tela Pagamento](./prints/tela-pagamento.png)
+<img width="321" height="641" alt="image" src="https://github.com/user-attachments/assets/20894148-08ab-4088-8336-dea7c42575f4" />
+
 
 #### Tela de Perfil
-![Tela Perfil](./prints/tela-perfil.png)
+<img width="310" height="650" alt="image" src="https://github.com/user-attachments/assets/f429f7a8-7a23-4859-8314-25d663192682" />
+
 
 #### Tela de Ajuda
-![Tela Ajuda](./prints/tela-ajuda.png)
+<img width="313" height="644" alt="image" src="https://github.com/user-attachments/assets/7e042930-937f-416a-9863-c11a96bd31a1" />
+
 
 ### GIF ou Vídeo do Fluxo Principal
 
-- [Adicione aqui o link para o GIF ou vídeo demonstrando o uso do app]
+https://drive.google.com/file/d/1yyLl8Uf4B4H_QF1JpVA_CSjqubdSAhh5/view?usp=drive_link
 
 ---
 
