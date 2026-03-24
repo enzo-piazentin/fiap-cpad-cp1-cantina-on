@@ -9,7 +9,6 @@ export default function Perfil() {
 
   return (
     <ScrollView style={styles.container}>
-      {/* Cabeçalho do Perfil */}
       <View style={styles.header}>
         <Image 
           source={{ uri: 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png' }} 
@@ -20,11 +19,9 @@ export default function Perfil() {
         <Text style={styles.email}>guilherme.califoni@fiap.com.br</Text>
       </View>
 
-      {/* Card de Saldo */}
       <View style={styles.cardSaldo}>
         <Text style={styles.saldoTitle}>Saldo Disponível</Text>
         <Text style={styles.saldoValue}>{saldo !== undefined ? `R$ ${saldo.toFixed(2).replace('.', ',')}` : 'R$ 0,00'}</Text>
-        {/* Botão que navega para a tela addSaldo.js */}
         <TouchableOpacity 
           style={styles.btnSaldo} 
           onPress={() => router.push('/addSaldo')}
@@ -33,9 +30,7 @@ export default function Perfil() {
         </TouchableOpacity>
       </View>
 
-      {/* Menu de Opções */}
       <View style={styles.menuContainer}>
-        {/* Botão que navega para a tela carrinho.js */}
         <TouchableOpacity style={styles.menuItem} onPress={() => router.push('/carrinho')}>
           <Text style={styles.menuItemText}>🍔 Meus Pedidos</Text>
         </TouchableOpacity>
@@ -50,14 +45,14 @@ export default function Perfil() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F5F5F5',
+    backgroundColor: '#000000',
   },
   header: {
     alignItems: 'center',
     padding: 30,
-    backgroundColor: '#FFF',
+    backgroundColor: '#0D0D0D',
     borderBottomWidth: 1,
-    borderBottomColor: '#E0E0E0',
+    borderBottomColor: '#424242',
   },
   avatar: {
     width: 100,
@@ -68,74 +63,73 @@ const styles = StyleSheet.create({
   name: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: '#333',
+    color: '#FFFFFF',
   },
   email: {
     fontSize: 14,
-    color: '#666',
+    color: '#BDBDBD',
     marginTop: 5,
   },
   curso: {
     fontSize: 16,
-    color: '#666',
+    color: '#BDBDBD',
     marginTop: 5,
   },
   cardSaldo: {
-    backgroundColor: '#4CAF50', // Verde estilo "dinheiro/cantina"
+    backgroundColor: '#4B163B', 
     margin: 20,
     padding: 20,
     borderRadius: 15,
     alignItems: 'center',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.2,
-    shadowRadius: 4,
-    elevation: 5,
+    borderWidth: 1,
+    borderColor: '#BD1E7C',
   },
   saldoTitle: {
-    color: '#E8F5E9',
+    color: '#BDBDBD',
     fontSize: 16,
   },
   saldoValue: {
-    color: '#FFF',
+    color: '#FFFFFF',
     fontSize: 32,
     fontWeight: 'bold',
     marginVertical: 10,
   },
   btnSaldo: {
-    backgroundColor: '#FFF',
+    backgroundColor: '#FF007F',
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 20,
     marginTop: 10,
   },
   btnSaldoText: {
-    color: '#4CAF50',
+    color: '#FFFFFF',
     fontWeight: 'bold',
     fontSize: 16,
   },
   menuContainer: {
-    backgroundColor: '#FFF',
+    backgroundColor: '#0D0D0D',
     marginHorizontal: 20,
     borderRadius: 15,
     paddingVertical: 10,
     marginBottom: 30,
+    borderWidth: 1,
+    borderColor: '#424242',
   },
   menuItem: {
     padding: 15,
     borderBottomWidth: 1,
-    borderBottomColor: '#F0F0F0',
+    borderBottomColor: '#424242',
   },
   menuItemSair: {
     borderBottomWidth: 0,
   },
   menuItemText: {
     fontSize: 16,
-    color: '#333',
+    color: '#FFFFFF',
   },
   menuItemTextSair: {
     fontSize: 16,
-    color: '#FF3B30', // Vermelho para destacar a opção de sair
+    color: '#FF007F', 
     fontWeight: 'bold',
   },
 });

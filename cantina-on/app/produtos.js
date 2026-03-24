@@ -110,7 +110,7 @@ export default function Produtos() {
 const styles = StyleSheet.create({
   container: {
     padding: 10,
-    backgroundColor: '#fff',
+    backgroundColor: '#000000',
   },
   linha: {
     flexDirection: 'row',
@@ -118,9 +118,9 @@ const styles = StyleSheet.create({
     marginBottom: 2,
   },
   caixaProduto: {
-    backgroundColor: '#fff',
-    borderWidth: 3,
-    borderColor: '#E83D84',
+    backgroundColor: '#0D0D0D',
+    borderWidth: 2,
+    borderColor: '#4B163B',
     margin: 5,
     borderRadius: 15,
     padding: 10,
@@ -136,21 +136,24 @@ const styles = StyleSheet.create({
     fontSize: 32,
     fontWeight: 'bold',
     marginBottom: 12,
+    color: '#FFFFFF',
+    marginTop: 10,
   },
   nomeProduto: {
     fontSize: 18,
     fontWeight: 'bold',
     marginTop: 5,
+    color: '#FFFFFF',
   },
   descricaoProduto: {
     fontSize: 14,
-    color: '#666',
+    color: '#BDBDBD',
   },
   precoProduto: {
     fontSize: 16,
     fontWeight: 'bold',
     marginTop: 5,
     textDecorationLine: 'underline',
-    color: '#E83D84',
+    color: '#FF007F',
   },
 });

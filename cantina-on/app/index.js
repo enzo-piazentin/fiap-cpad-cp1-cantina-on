@@ -15,7 +15,6 @@ export default function Home() {
       />
 
       <View style={styles.menuContainer}>
-        {/* Botão que navega para a tela carrinho.js */}
         <TouchableOpacity style={styles.menuItem} onPress={() => router.push('/carrinho')}>
           <Text style={styles.menuItemText}>🛒 Meu Carrinho</Text>
         </TouchableOpacity>
@@ -38,28 +37,26 @@ const styles = StyleSheet.create({
     flex: 1, 
     alignItems: 'center',
     justifyContent: 'center', 
-    backgroundColor: '#F5F5F5' 
+    backgroundColor: '#000000' 
   },
-  
   titulo: { 
     fontSize: 32, 
     fontWeight: 'bold', 
-    marginBottom: 24 
+    marginBottom: 24,
+    color: '#FFFFFF'
   },
-
   botaoTexto: { 
-    color: '#fff', 
+    color: '#FFFFFF', 
     fontSize: 16, 
     fontWeight: '600' 
   },
-
   avatar: {
     width: 200,
     height: 200,
     marginBottom: 20,
   },
   menuContainer: {
-    backgroundColor: '#FFF',
+    backgroundColor: '#0D0D0D',
     borderRadius: 15,
     paddingVertical: 20,
     paddingHorizontal: 15,
@@ -68,27 +65,28 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     width: 280,
     alignSelf: 'center',
+    borderWidth: 1,
+    borderColor: '#424242',
   },
   menuItem: {
     padding: 15,
     borderBottomWidth: 1,
-    borderBottomColor: '#F0F0F0',
+    borderBottomColor: '#424242',
     alignItems: 'center',
     justifyContent: 'center',
     width: '100%',
   },
-    menuItemSair: {
+  menuItemSair: {
     borderBottomWidth: 0,
   },
   menuItemText: {
     fontSize: 18,
-    color: '#333',
+    color: '#FFFFFF',
     textAlign: 'center',
   },
   menuItemTextSair: {
     fontSize: 18,
-    color: '#FF3B30', // Vermelho para destacar a opção de sair
+    color: '#FF007F', 
     fontWeight: 'bold',
   },
-},
-);
+});

@@ -7,7 +7,6 @@ export default function AjudaSuporte() {
 
   return (
     <ScrollView style={styles.container}>
-      {/* Cabeçalho */}
       <View style={styles.header}>
         <TouchableOpacity onPress={() => router.back()} style={styles.btnVoltar}>
           <Text style={styles.btnVoltarText}>← Voltar</Text>
@@ -16,7 +15,6 @@ export default function AjudaSuporte() {
         <Text style={styles.subtitle}>Como podemos te ajudar hoje?</Text>
       </View>
 
-      {/* Seção de Dúvidas Frequentes */}
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>Dúvidas Frequentes</Text>
         
@@ -36,15 +34,14 @@ export default function AjudaSuporte() {
         </View>
       </View>
 
-      {/* Seção de Contato */}
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>Ainda precisa de ajuda?</Text>
         
-        <TouchableOpacity style={styles.contactBtnWhatsApp}onPress={() => router.push('/Desenvolvimento')}>
+        <TouchableOpacity style={styles.contactBtnWhatsApp} onPress={() => router.push('/Desenvolvimento')}>
           <Text style={styles.contactBtnText}>💬 Falar no WhatsApp</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.contactBtnEmail }onPress={() => router.push('/Desenvolvimento')}>
+        <TouchableOpacity style={styles.contactBtnEmail} onPress={() => router.push('/Desenvolvimento')}>
           <Text style={styles.contactBtnTextEmail}>✉️ Enviar E-mail para a Cantina</Text>
         </TouchableOpacity>
       </View>
@@ -55,32 +52,32 @@ export default function AjudaSuporte() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F5F5F5',
+    backgroundColor: '#000000',
   },
   header: {
     paddingTop: 50,
     paddingHorizontal: 20,
     paddingBottom: 20,
-    backgroundColor: '#FFF',
+    backgroundColor: '#0D0D0D',
     borderBottomWidth: 1,
-    borderBottomColor: '#E0E0E0',
+    borderBottomColor: '#424242',
   },
   btnVoltar: {
     marginBottom: 15,
   },
   btnVoltarText: {
     fontSize: 16,
-    color: '#4CAF50',
+    color: '#FF007F',
     fontWeight: 'bold',
   },
   title: {
     fontSize: 28,
     fontWeight: 'bold',
-    color: '#333',
+    color: '#FFFFFF',
   },
   subtitle: {
     fontSize: 16,
-    color: '#666',
+    color: '#BDBDBD',
     marginTop: 5,
   },
   section: {
@@ -89,53 +86,50 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#333',
+    color: '#FFFFFF',
     marginBottom: 15,
   },
   faqCard: {
-    backgroundColor: '#FFF',
+    backgroundColor: '#0D0D0D',
     padding: 15,
     borderRadius: 10,
     marginBottom: 10,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.1,
-    shadowRadius: 2,
-    elevation: 2,
+    borderWidth: 1,
+    borderColor: '#424242',
   },
   faqQuestion: {
     fontSize: 16,
     fontWeight: 'bold',
-    color: '#333',
+    color: '#FFFFFF',
     marginBottom: 5,
   },
   faqAnswer: {
     fontSize: 14,
-    color: '#666',
+    color: '#BDBDBD',
     lineHeight: 20,
   },
   contactBtnWhatsApp: {
-    backgroundColor: '#25D366', // Cor oficial do WhatsApp
+    backgroundColor: '#25D366', 
     padding: 15,
     borderRadius: 10,
     alignItems: 'center',
     marginBottom: 10,
   },
   contactBtnText: {
-    color: '#FFF',
+    color: '#FFFFFF',
     fontSize: 16,
     fontWeight: 'bold',
   },
   contactBtnEmail: {
-    backgroundColor: '#FFF',
+    backgroundColor: '#0D0D0D',
     padding: 15,
     borderRadius: 10,
     alignItems: 'center',
     borderWidth: 1,
-    borderColor: '#4CAF50',
+    borderColor: '#FF007F',
   },
   contactBtnTextEmail: {
-    color: '#4CAF50',
+    color: '#FF007F',
     fontSize: 16,
     fontWeight: 'bold',
   },
