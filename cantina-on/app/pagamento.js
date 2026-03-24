@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     marginBottom: 20,
-    color: '#FF007F', // Magenta Vibrante
+    color: '#FFFFFF',
   },
   opcoesContainer: {
     flex: 1,
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#0D0D0D',
     padding: 20,
     borderTopWidth: 1,
-    borderTopColor: '#BD1E7C', // Magenta Médio
+    borderTopColor: '#424242',
   },
   totalTexto: {
     fontSize: 20,
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
   },
   botaoConfirmar: {
-    backgroundColor: '#FF007F', // Destaque FIAP
+    backgroundColor: '#FF007F',
     padding: 15,
     borderRadius: 10,
     alignItems: 'center',

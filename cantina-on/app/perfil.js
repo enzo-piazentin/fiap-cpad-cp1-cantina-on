@@ -1,9 +1,11 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView } from 'react-native';
 import { useRouter } from 'expo-router';
+import { useSaldo } from './SaldoContext';
 
 export default function Perfil() {
   const router = useRouter();
+  const { saldo } = useSaldo();
 
   return (
     <ScrollView style={styles.container}>
@@ -19,7 +21,7 @@ export default function Perfil() {
 
       <View style={styles.cardSaldo}>
         <Text style={styles.saldoTitle}>Saldo Disponível</Text>
-        <Text style={styles.saldoValue}>R$ 45,50</Text>
+        <Text style={styles.saldoValue}>{saldo !== undefined ? `R$ ${saldo.toFixed(2).replace('.', ',')}` : 'R$ 0,00'}</Text>
         <TouchableOpacity 
           style={styles.btnSaldo} 
           onPress={() => router.push('/addSaldo')}
@@ -32,17 +34,8 @@ export default function Perfil() {
         <TouchableOpacity style={styles.menuItem} onPress={() => router.push('/carrinho')}>
           <Text style={styles.menuItemText}>🍔 Meus Pedidos</Text>
         </TouchableOpacity>
-
-        <TouchableOpacity style={styles.menuItem}>
-          <Text style={styles.menuItemText}>⚙️ Configurações da Conta</Text>
-        </TouchableOpacity>
-
         <TouchableOpacity style={styles.menuItem} onPress={() => router.push('/ajuda')}>
           <Text style={styles.menuItemText}>❓ Ajuda e Suporte</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={[styles.menuItem, styles.menuItemSair]}>
-          <Text style={styles.menuItemTextSair}>🚪 Sair</Text>
         </TouchableOpacity>
       </View>
     </ScrollView>
@@ -59,7 +52,7 @@ const styles = StyleSheet.create({
     padding: 30,
     backgroundColor: '#0D0D0D',
     borderBottomWidth: 1,
-    borderBottomColor: '#4B163B', // Vinho Escuro
+    borderBottomColor: '#424242',
   },
   avatar: {
     width: 100,
@@ -85,13 +78,13 @@ const styles = StyleSheet.create({
     marginTop: 5,
   },
   cardSaldo: {
-    backgroundColor: '#4B163B', // Vinho Escuro na base do card
+    backgroundColor: '#4B163B', 
     margin: 20,
     padding: 20,
     borderRadius: 15,
     alignItems: 'center',
     borderWidth: 1,
-    borderColor: '#BD1E7C', // Magenta Médio na borda
+    borderColor: '#BD1E7C',
   },
   saldoTitle: {
     color: '#BDBDBD',
@@ -138,7 +131,7 @@ const styles = StyleSheet.create({
   },
   menuItemTextSair: {
     fontSize: 16,
-    color: '#FF007F',
+    color: '#FF007F', 
     fontWeight: 'bold',
   },
 });

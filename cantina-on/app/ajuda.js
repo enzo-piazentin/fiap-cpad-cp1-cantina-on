@@ -37,11 +37,11 @@ export default function AjudaSuporte() {
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>Ainda precisa de ajuda?</Text>
         
-        <TouchableOpacity style={styles.contactBtnWhatsApp}>
+        <TouchableOpacity style={styles.contactBtnWhatsApp} onPress={() => router.push('/Desenvolvimento')}>
           <Text style={styles.contactBtnText}>💬 Falar no WhatsApp</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.contactBtnEmail}>
+        <TouchableOpacity style={styles.contactBtnEmail} onPress={() => router.push('/Desenvolvimento')}>
           <Text style={styles.contactBtnTextEmail}>✉️ Enviar E-mail para a Cantina</Text>
         </TouchableOpacity>
       </View>
@@ -60,20 +60,20 @@ const styles = StyleSheet.create({
     paddingBottom: 20,
     backgroundColor: '#0D0D0D',
     borderBottomWidth: 1,
-    borderBottomColor: '#4B163B',
+    borderBottomColor: '#424242',
   },
   btnVoltar: {
     marginBottom: 15,
   },
   btnVoltarText: {
     fontSize: 16,
-    color: '#BD1E7C',
+    color: '#FF007F',
     fontWeight: 'bold',
   },
   title: {
     fontSize: 28,
     fontWeight: 'bold',
-    color: '#FF007F',
+    color: '#FFFFFF',
   },
   subtitle: {
     fontSize: 16,
@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
     lineHeight: 20,
   },
   contactBtnWhatsApp: {
-    backgroundColor: '#BD1E7C', // Mantendo o tom da FIAP mesmo no WhatsApp
+    backgroundColor: '#25D366', 
     padding: 15,
     borderRadius: 10,
     alignItems: 'center',
@@ -121,7 +121,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   contactBtnEmail: {
-    backgroundColor: '#000000',
+    backgroundColor: '#0D0D0D',
     padding: 15,
     borderRadius: 10,
     alignItems: 'center',

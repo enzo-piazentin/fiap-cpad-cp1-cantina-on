@@ -26,10 +26,6 @@ export default function Home() {
         <TouchableOpacity style={styles.menuItem} onPress={() => router.push('/ajuda')}>
           <Text style={styles.menuItemText}>❓ Ajuda e Suporte</Text>
         </TouchableOpacity>
-
-        <TouchableOpacity style={[styles.menuItem, styles.menuItemSair]}>
-          <Text style={styles.menuItemTextSair}>⚙️ Configurações da Conta</Text>
-        </TouchableOpacity>
       </View>
     </View>
   );
@@ -40,7 +36,18 @@ const styles = StyleSheet.create({
     flex: 1, 
     alignItems: 'center',
     justifyContent: 'center', 
-    backgroundColor: '#000000' // Preto Puro
+    backgroundColor: '#000000' 
+  },
+  titulo: { 
+    fontSize: 32, 
+    fontWeight: 'bold', 
+    marginBottom: 24,
+    color: '#FFFFFF'
+  },
+  botaoTexto: { 
+    color: '#FFFFFF', 
+    fontSize: 16, 
+    fontWeight: '600' 
   },
   avatar: {
     width: 200,
@@ -48,31 +55,37 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   menuContainer: {
-    backgroundColor: '#0D0D0D', // Grafite Muito Escuro
-    marginHorizontal: 20,
+    backgroundColor: '#0D0D0D',
     borderRadius: 15,
     paddingVertical: 10,
     paddingHorizontal: 15,
     marginBottom: 30,
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: 280,
+    alignSelf: 'center',
     borderWidth: 1,
-    borderColor: '#4B163B', // Vinho Escuro
-    width: '90%',
+    borderColor: '#424242',
   },
   menuItem: {
     padding: 18,
     borderBottomWidth: 1,
-    borderBottomColor: '#424242', // Cinza Escuro
+    borderBottomColor: '#424242',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '100%',
   },
   menuItemSair: {
     borderBottomWidth: 0,
   },
   menuItemText: {
     fontSize: 18,
-    color: '#FFFFFF', // Branco
+    color: '#FFFFFF',
+    textAlign: 'center',
   },
   menuItemTextSair: {
     fontSize: 18,
-    color: '#FF007F', // Magenta Vibrante para destaque
+    color: '#FF007F', 
     fontWeight: 'bold',
   },
 });

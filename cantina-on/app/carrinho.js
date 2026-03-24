@@ -34,16 +34,16 @@ export default function Carrinho() {
     ));
   };
 
+
   const calcularTotal = () => {
     return produtosCarrinho.reduce((total, produto) => total + (produto.preco * produto.quantidade), 0);
   };
 
   return (
     <View style={styles.mainContainer}>
-      <Text style={styles.titulo}>Meu Carrinho</Text>
-
-      <ScrollView style={styles.scrollContainer}>
-        {produtosCarrinho.map(produto => (
+      <ScrollView>
+        <Text style={styles.titulo}>Meu Carrinho</Text>
+        {produtosCarrinho.map((produto) => (
           <View key={produto.id} style={styles.produtoContainer}>
             <TouchableOpacity style={styles.imagemContainer}>
               <Image
@@ -52,11 +52,9 @@ export default function Carrinho() {
                 defaultSource={require('../img/MascoteOn.png')}
               />
             </TouchableOpacity>
-
             <View style={styles.produtoInfo}>
               <Text style={styles.produtoNome}>{produto.nome}</Text>
               <Text style={styles.produtoPreco}>R$ {produto.preco.toFixed(2)}</Text>
-
               <View style={styles.quantidadeContainer}>
                 <TouchableOpacity
                   style={styles.botaoQuantidade}
@@ -64,9 +62,7 @@ export default function Carrinho() {
                 >
                   <Text style={styles.botaoQuantidadeTexto}>-</Text>
                 </TouchableOpacity>
-
                 <Text style={styles.quantidadeTexto}>{produto.quantidade}</Text>
-
                 <TouchableOpacity
                   style={styles.botaoQuantidade}
                   onPress={() => aumentarQuantidade(produto.id)}
@@ -105,11 +101,17 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     marginBottom: 20,
-    color: '#FF007F',
+    color: '#FFFFFF',
   },
   scrollContainer: {
     flex: 1,
     paddingHorizontal: 20,
+  },
+  carrinhoVazio: {
+    textAlign: 'center',
+    fontSize: 18,
+    color: '#BDBDBD',
+    marginTop: 50,
   },
   produtoContainer: {
     backgroundColor: '#0D0D0D',
@@ -119,7 +121,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     borderWidth: 1,
-    borderColor: '#4B163B',
+    borderColor: '#424242',
   },
   imagemContainer: {
     marginRight: 15,
@@ -140,7 +142,7 @@ const styles = StyleSheet.create({
   },
   produtoPreco: {
     fontSize: 14,
-    color: '#BD1E7C',
+    color: '#FF007F',
     fontWeight: '600',
     marginBottom: 10,
   },
@@ -173,7 +175,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#0D0D0D',
     padding: 20,
     borderTopWidth: 1,
-    borderTopColor: '#BD1E7C',
+    borderTopColor: '#424242',
   },
   totalTexto: {
     fontSize: 20,

@@ -120,7 +120,7 @@ export default function Produtos() {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 20,
+    padding: 10,
     backgroundColor: '#000000',
   },
   linha: {
@@ -131,7 +131,7 @@ const styles = StyleSheet.create({
   caixaProduto: {
     backgroundColor: '#0D0D0D',
     borderWidth: 2,
-    borderColor: '#4B163B', // Vinho Escuro
+    borderColor: '#4B163B',
     margin: 5,
     borderRadius: 15,
     padding: 10,
@@ -146,25 +146,26 @@ const styles = StyleSheet.create({
   titulo:{
     fontSize: 28,
     fontWeight: 'bold',
-    marginBottom: 15,
+    marginBottom: 12,
+    color: '#FFFFFF',
     marginTop: 10,
-    color: '#FF007F', // Destaque para separar as sessões
   },
   nomeProduto: {
     fontSize: 16,
     fontWeight: 'bold',
     color: '#FFFFFF',
     marginTop: 5,
+    color: '#FFFFFF',
   },
   descricaoProduto: {
-    fontSize: 12,
-    color: '#BDBDBD', // Cinza Claro
-    marginTop: 3,
+    fontSize: 14,
+    color: '#BDBDBD',
   },
   precoProduto: {
     fontSize: 16,
     fontWeight: 'bold',
     marginTop: 5,
-    color: '#BD1E7C', // Magenta Médio
+    textDecorationLine: 'underline',
+    color: '#FF007F',
   },
 });
